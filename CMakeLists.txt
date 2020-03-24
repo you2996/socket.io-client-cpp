@@ -28,6 +28,12 @@ add_definitions(
         -D_WEBSOCKETPP_CPP11_STL_
         -D_WEBSOCKETPP_CPP11_FUNCTIONAL_)
 
+if(WIN32)
+	add_definitions(
+		-DWINDOWS
+		-Dsio_EXPORT)
+endif()
+
 add_library(sioclient ${ALL_SRC})
 
 target_include_directories(sioclient PRIVATE
